@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Rise Within</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="resources.html">Resources for Help</a></li>
+            <li><a href="journal.html">Daily Journal</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page resources-page">
+        <h1>Mental Health Resources</h1>
+        
+        <section class="resource-section">
+            <h2>Emergency Help</h2>
+            <div class="emergency-contacts">
+                <div class="contact-card urgent">
+                    <h3>National Suicide Prevention Lifeline</h3>
+                    <p>24/7 Support: 988</p>
+                    <p class="description">Confidential support for people in suicidal crisis or emotional distress</p>
+                    <a href="tel:988" class="emergency-btn">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <h3>Crisis Text Line</h3>
+                    <p>Text HOME to 741741</p>
+                    <p class="description">24/7 text support with a trained crisis counselor</p>
+                    <a href="sms:741741" class="emergency-btn">Text Now</a>
+                </div>
+                <div class="contact-card">
+                    <h3>SAMHSA's National Helpline</h3>
+                    <p>1-800-662-4357</p>
+                    <p class="description">Treatment referral and information service for individuals facing mental health or substance use disorders</p>
+                    <a href="tel:18006624357" class="emergency-btn">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <h3>The Trevor Project (LGBTQ+)</h3>
+                    <p>1-866-488-7386</p>
+                    <p class="description">Crisis intervention and suicide prevention for LGBTQ+ youth</p>
+                    <a href="tel:18664887386" class="emergency-btn">Call Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="resource-section">
+            <h2>Find a Therapist</h2>
+            <div class="therapy-search">
+                <input type="text" id="location-input" placeholder="Enter your zip code">
+                <button onclick="searchTherapists()">Search</button>
+                <div id="therapist-results" class="results-grid"></div>
+            </div>
+        </section>
+
+        <section class="resource-section">
+            <h2>Self-Help Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Stress Management</h3>
+                    <ul>
+                        <li>Deep breathing exercises</li>
+                        <li>Progressive muscle relaxation</li>
+                        <li>Time management techniques</li>
+                        <li>Mindfulness practices</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Healthy Habits</h3>
+                    <ul>
+                        <li>Sleep hygiene tips</li>
+                        <li>Exercise routines</li>
+                        <li>Nutrition guidance</li>
+                        <li>Social connection strategies</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Academic Support</h3>
+                    <ul>
+                        <li>Study techniques</li>
+                        <li>Test anxiety management</li>
+                        <li>Time blocking methods</li>
+                        <li>Goal setting strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/resources.js"></script>
+</body>
+</html>

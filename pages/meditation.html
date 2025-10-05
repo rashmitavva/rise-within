@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation - Rise Within</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="resources.html">Resources for Help</a></li>
+            <li><a href="journal.html">Daily Journal</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page meditation-page">
+        <h1>Meditation & Breathing</h1>
+
+        <div class="breathing-exercise">
+            <h2>Breathing Exercise</h2>
+            <div class="breathing-circle">
+                <div class="circle-inner"></div>
+                <div class="instruction">Breathe In</div>
+                <div class="timer">4</div>
+            </div>
+            <div class="controls">
+                <button id="start-breathing" class="breathing-btn">Start Exercise</button>
+                <select id="breathing-pattern">
+                    <option value="4-4-4">Box Breathing (4-4-4)</option>
+                    <option value="4-7-8">4-7-8 Breathing</option>
+                    <option value="5-5">Simple Breathing (5-5)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="guided-meditations">
+            <h2>Guided Meditations</h2>
+            <div class="meditation-grid">
+                <div class="meditation-card">
+                    <h3>5-Minute Stress Relief</h3>
+                    <p>Quick meditation for immediate stress relief</p>
+                    <button class="play-btn" data-duration="5">Start</button>
+                </div>
+                <div class="meditation-card">
+                    <h3>10-Minute Focus</h3>
+                    <p>Improve concentration and mental clarity</p>
+                    <button class="play-btn" data-duration="10">Start</button>
+                </div>
+                <div class="meditation-card">
+                    <h3>15-Minute Sleep Aid</h3>
+                    <p>Peaceful meditation for better sleep</p>
+                    <button class="play-btn" data-duration="15">Start</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="meditation-timer">
+            <h2>Custom Meditation Timer</h2>
+            <div class="timer-controls">
+                <input type="number" id="custom-minutes" min="1" max="60" value="10">
+                <label for="custom-minutes">minutes</label>
+                <button id="start-timer" class="timer-btn">Start Timer</button>
+            </div>
+            <div class="progress-circle">
+                <svg viewBox="0 0 100 100">
+                    <circle class="progress-background" cx="50" cy="50" r="45"/>
+                    <circle class="progress-bar" cx="50" cy="50" r="45"/>
+                </svg>
+                <div class="time-display">10:00</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/meditation.js"></script>
+</body>
+</html>

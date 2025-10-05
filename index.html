@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise Within - Mental Health Resource</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resources">Resources for Help</a></li>
+            <li><a href="#journal">Daily Journal</a></li>
+            <li><a href="#meditation">Meditation</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page" id="home">
+        <h1>Rise Within</h1>
+        <p class="goal">Our goal is to provide a mental health resource that allows students to manage stress and build healthy habits.</p>
+        <p class="creators">Created by: Anvi and Rashmi</p>
+        <button class="start-btn">Start Assessment</button>
+    </div>
+
+    <div class="page" id="assessment" style="display: none;">
+        <h2>How are you feeling today?</h2>
+        <div class="feelings-grid">
+            <button class="feeling-btn" data-feeling="Anxious">Anxious</button>
+            <button class="feeling-btn" data-feeling="Nervous">Nervous</button>
+            <button class="feeling-btn" data-feeling="Sleepless">Sleepless</button>
+            <button class="feeling-btn" data-feeling="Sad">Sad</button>
+            <button class="feeling-btn" data-feeling="Curious">Curious</button>
+            <button class="feeling-btn" data-feeling="Stressed">Stressed</button>
+        </div>
+    </div>
+
+    <div class="page" id="questions" style="display: none;">
+        <h2>Assessment Questions</h2>
+        <form id="assessment-form">
+            <div class="question">
+                <label for="feeling-scale">On a scale of 1-5, how <span id="selected-feeling"></span> are you?</label>
+                <input type="range" id="feeling-scale" min="1" max="5" value="3">
+                <span class="range-value">3</span>
+            </div>
+
+            <div class="question">
+                <label for="motivation-scale">On a scale of 1-5, how motivated are you for school and activities?</label>
+                <input type="range" id="motivation-scale" min="1" max="5" value="3">
+                <span class="range-value">3</span>
+            </div>
+
+            <div class="question">
+                <label for="sleep-hours">How many hours of sleep do you get every night (0-15)?</label>
+                <input type="number" id="sleep-hours" min="0" max="15" value="8">
+            </div>
+
+            <div class="question">
+                <label for="management-scale">On a scale of 1-5, how well do you manage your academics and responsibilities?</label>
+                <input type="range" id="management-scale" min="1" max="5" value="3">
+                <span class="range-value">3</span>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="page" id="results" style="display: none;">
+        <h2>Your Assessment Results</h2>
+        <p id="score-result"></p>
+        <div id="recommendations"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

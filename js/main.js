@@ -1,5 +1,63 @@
 // Main JavaScript file for Rise Within
+class MoodGarden {
+    constructor() {
+        this.plants = [];
+        this.loadGarden();
+    }
+    
+    loadGarden() {
+        const savedGarden = localStorage.getItem('moodGarden');
+        if (savedGarden) {
+            this.plants = JSON.parse(savedGarden);
+            this.updateGarden();
+        }
+    }
+
+    addPlant(mood, score) {
+        const plant = {
+            type: this.getPlantType(mood, score),
+            mood: mood,
+            score: score,
+            date: new Date().toLocaleDateString(),
+            plantedDate: new Date().toISOString()
+        };
+        this.plants.push(plant);
+        this.savePlants();
+        this.updateGarden();
+    }
+    
+    getPlantType(mood, score) {
+        // Different plants for different moods and scores
+        if (score <= 8) return '🌱'; // Needs nurturing
+        if (score <= 12) return '🌿'; // Growing
+        if (score <= 16) return '🌸'; // Blooming
+        if (score <= 20) return '🌻'; // Thriving
+        return '🌺'; // Flourishing
+    }
+    
+    savePlants() {
+        localStorage.setItem('moodGarden', JSON.stringify(this.plants));
+    }
+    
+    updateGarden() {
+        const garden = document.getElementById('mood-garden');
+        if (!garden) return;
+
+        garden.innerHTML = this.plants
+            .map(plant => `
+                <div class="plant">
+                    ${plant.type}
+                    <div class="plant-tooltip">
+                        Feeling: ${plant.mood}<br>
+                        Date: ${plant.date}
+                    </div>
+                </div>
+            `).join('');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    const moodGarden = new MoodGarden();
     // Get DOM elements
     const startBtn = document.querySelector('.start-btn');
     const feelingBtns = document.querySelectorAll('.feeling-btn');
@@ -180,6 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     result,
                     timestamp: new Date().toISOString()
                 };
+
+                // Add a new plant to the garden
+                moodGarden.addPlant(assessment.feeling, totalScore);
 
                 // Save to localStorage
                 try {

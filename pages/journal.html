@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Journal - Rise Within</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/journal.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -69,12 +71,12 @@
         </div>
 
         <div class="journal-history">
-            <h2>Previous Entries</h2>
-            <div id="entries-list"></div>
+            <button id="toggle-entries-btn" class="toggle-entries-btn">View Previous Entries</button>
+            <div id="entries-container" style="display: none;">
+                <h2>Previous Entries</h2>
+                <div id="entries-list"></div>
+            </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/journal.js"></script>
 </body>
 </html>

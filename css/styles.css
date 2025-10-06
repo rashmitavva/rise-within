@@ -514,3 +514,368 @@ input[type="range"], input[type="number"] {
     }
 }
 
+
+/* Mood Garden Styles */
+.mood-garden-container {
+    margin: 2rem 0;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(to bottom, #e6f3ff, #ffffff);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.mood-garden {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    min-height: 200px;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.plant {
+    font-size: 2rem;
+    transform-origin: bottom;
+    animation: plantGrow 1s ease-out forwards;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.plant:hover {
+    transform: scale(1.2);
+}
+
+.plant::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 4px;
+    background: #8b4513;
+    border-radius: 2px;
+    opacity: 0.3;
+}
+
+@keyframes plantGrow {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.garden-info {
+    color: var(--light-text);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Plant tooltip */
+.plant-tooltip {
+    position: absolute;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+    font-size: 0.8rem;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.plant:hover .plant-tooltip {
+    opacity: 1;
+}
+
+
+/* Journal Entries Styles */
+#journal-entries {
+    margin-top: 2rem;
+}
+
+.journal-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin: 1rem 0;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.journal-card:hover {
+    transform: translateY(-2px);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.entry-header h3 {
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.mood-emoji {
+    font-size: 1.5rem;
+}
+
+.entry-content h4 {
+    color: var(--accent-color);
+    margin: 1rem 0 0.5rem;
+}
+
+.entry-content ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.entry-content li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.entry-content li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: -1rem;
+}
+
+.success-message {
+    background-color: var(--success-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    text-align: center;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+/* Journal Cards */
+.journal-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.journal-card:hover {
+    transform: translateY(-5px);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.entry-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.mood-emoji {
+    font-size: 24px;
+}
+
+.entry-content h4 {
+    color: #555;
+    margin: 15px 0 10px;
+}
+
+.entry-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.entry-content li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.entry-content p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in, fadeOut 0.3s ease-out 2.7s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Mood Chart */
+#mood-chart {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Toggle Button */
+.toggle-entries-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-entries-btn:hover {
+    background-color: #357abd;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.page-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.page-btn.active {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+}
+
+/* Entries List Container */
+#entries-list {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Scrollbar Styles */
+#entries-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#entries-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#entries-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#entries-list::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* No Entries Message */
+.no-entries {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Entries Container */
+#entries-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#entries-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Export Button */
+.export-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s ease;
+    display: block;
+}
+
+.export-btn:hover {
+    background-color: #218838;
+}
+
+.journal-history {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

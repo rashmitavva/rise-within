@@ -1,3 +1,53 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function switchTab(tabId) {
+        // Remove active class from all tabs and contents
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to selected tab and content
+        const selectedTab = document.querySelector(`[data-tab="${tabId}"]`);
+        const selectedContent = document.getElementById(tabId);
+        
+        if (selectedTab && selectedContent) {
+            selectedTab.classList.add('active');
+            selectedContent.classList.add('active');
+        }
+    }
+
+    // Add click event listeners to tabs
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            switchTab(tab.dataset.tab);
+        });
+    });
+
+    // Add keyboard navigation
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('keydown', (e) => {
+            let targetTab;
+            
+            switch(e.key) {
+                case 'ArrowLeft':
+                    targetTab = tabs[index - 1] || tabs[tabs.length - 1];
+                    break;
+                case 'ArrowRight':
+                    targetTab = tabs[index + 1] || tabs[0];
+                    break;
+            }
+
+            if (targetTab) {
+                e.preventDefault();
+                targetTab.focus();
+                switchTab(targetTab.dataset.tab);
+            }
+        });
+    });
+});
+
 // Initialize map
 let map;
 const GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY'; // Replace with actual API key

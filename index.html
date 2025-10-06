@@ -9,11 +9,11 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#resources">Resources for Help</a></li>
-            <li><a href="#journal">Daily Journal</a></li>
-            <li><a href="#meditation">Meditation</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/resources.html">Resources for Help</a></li>
+            <li><a href="pages/journal.html">Daily Journal</a></li>
+            <li><a href="pages/meditation.html">Meditation</a></li>
+            <li><a href="pages/about.html">About Us</a></li>
         </ul>
     </nav>
 
@@ -62,7 +62,10 @@
                 <span class="range-value">3</span>
             </div>
 
-            <button type="submit">Submit</button>
+            <div class="navigation-buttons">
+                <button type="button" class="nav-btn" id="back-to-topics">Back to Topics</button>
+                <button type="submit" class="nav-btn">Submit Assessment</button>
+            </div>
         </form>
     </div>
 
@@ -72,6 +75,6 @@
         <div id="recommendations"></div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

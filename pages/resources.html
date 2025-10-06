@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Rise Within</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/resources.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -20,7 +21,14 @@
     <div class="page resources-page">
         <h1>Mental Health Resources</h1>
         
-        <section class="resource-section">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="emergency">Emergency Help</button>
+            <button class="tab-btn" data-tab="therapy">Therapy Resources</button>
+            <button class="tab-btn" data-tab="self-help">Self-Help Tools</button>
+            <button class="tab-btn" data-tab="community">Community Support</button>
+        </div>
+
+        <section class="resource-section tab-content active" id="emergency">
             <h2>Emergency Help</h2>
             <div class="emergency-contacts">
                 <div class="contact-card urgent">
@@ -50,16 +58,25 @@
             </div>
         </section>
 
-        <section class="resource-section">
+        <section class="resource-section tab-content" id="therapy">
             <h2>Find a Therapist</h2>
             <div class="therapy-search">
                 <input type="text" id="location-input" placeholder="Enter your zip code">
                 <button onclick="searchTherapists()">Search</button>
                 <div id="therapist-results" class="results-grid"></div>
             </div>
+            <div class="resource-card">
+                <h3>Types of Therapy Available</h3>
+                <ul>
+                    <li>Individual Counseling</li>
+                    <li>Group Therapy</li>
+                    <li>Online Therapy</li>
+                    <li>School Counseling Services</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="resource-section">
+        <section class="resource-section tab-content" id="self-help">
             <h2>Self-Help Resources</h2>
             <div class="resource-grid">
                 <div class="resource-card">
@@ -89,6 +106,41 @@
                         <li>Goal setting strategies</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section class="resource-section tab-content" id="community">
+            <h2>Community Support</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Support Groups</h3>
+                    <ul>
+                        <li>Student Mental Health Groups</li>
+                        <li>Anxiety Support Circles</li>
+                        <li>Depression Support Groups</li>
+                        <li>Stress Management Workshops</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Online Communities</h3>
+                    <ul>
+                        <li>Mental Health Forums</li>
+                        <li>Student Support Networks</li>
+                        <li>Peer Support Programs</li>
+                        <li>Virtual Support Groups</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Local Resources</h3>
+                    <ul>
+                        <li>Community Centers</li>
+                        <li>Youth Organizations</li>
+                        <li>School-based Programs</li>
+                        <li>Wellness Centers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
             </div>
         </section>
     </div>

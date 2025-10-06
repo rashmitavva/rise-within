@@ -53,7 +53,7 @@ Rise Within is a comprehensive mental health resource platform designed to help 
 ### Running Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rashmitavva/rise-within.git
+   git clone https://github.com/Rashmi Tavva/rise-within.git
    ```
 
 2. Navigate to the project directory:
@@ -106,6 +106,6 @@ For support, please open an issue in the GitHub repository or contact us at [sup
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
-- Created by Anvi and Rashmi
+- Created by Anvi Chilakapati and Rashmi Tavva Tavva
 - Mental health resources compiled from various verified sources
-- Icons and images from [source credits]
+
